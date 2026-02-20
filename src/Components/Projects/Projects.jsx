@@ -1,34 +1,61 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import WeatherImg from "../../assets/images/Weather_App.jpeg";
-import ExpenseImg from "../../assets/images/Expense_Tracker.jpeg";
-import EcommerceImg from "../../assets//images/Ecommerce_Cart.jpeg";
+import ChessImg from "../../assets/images/Chess.JPG";
+import NotesAppImg from "../../assets/images/Notes App MERN.JPG";
+import ReelAppImg from "../../assets/images/Reel Main.JPG";
 
 const Projects = () => {
+  const projectList = [
+    {
+      title: "Chess Game",
+      main: "A web-based Chess Game built with Node.js, Express, and EJS for backend logic and templating, and Chess.js for enforcing legal chess rules. The app renders a dynamic chessboard and handles move validation, captures, checks, and checkmates, all styled using Tailwind CSS via CDN for a clean, responsive UI.",
+      image: ChessImg,
+      sourceUrl: "https://github.com/Anurag781/Chess-Game",
+      tech: ["Node.js", "Express", "EJS", "Tailwind CSS", "Chess.js", "Socket.io"]
+    },
+    {
+      title: "Notes Application",
+      main: "A full-stack Notes Application utilizing MongoDB, Express, React, and Node.js for seamless CRUD functionality and secure user authentication. Users can sign up, log in, create, edit, pin, and search notes, with responsive frontend styling via Tailwind CSS and RESTful API calls using Axios.",
+      image: NotesAppImg,
+      sourceUrl: "https://github.com/Anurag781/MERN-Notes-App",
+      tech: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS", "Axios"]
+    },
+    {
+      title: "ReelStyle Food Ordering Platform",
+      main: "ReelStyle is a reel-inspired food ordering web application that transforms traditional menu browsing into an engaging video-based experience. Users can discover dishes through short reels and place orders seamlessly. The platform also includes a dedicated restaurant dashboard for managing menus and tracking orders in real time.",
+      image: ReelAppImg,
+      sourceUrl: "https://github.com/Anurag781/Reel-Style-Mern-App",
+      tech: ["React.js", "Tailwind CSS", "JavaScript (ES6+)", "Axios", "React Router", "Node.js", "Express.js", "MongoDB (Mongoose)", "Socket.IO", "RESTful APIs", "JWT"]
+    }
+  ];
+
   return (
-    <div id="Projects" className="px-6 md:px-24 pt-0 md:pt-6 pb-6 text-white">
-      <h1 className="text-2xl md:text-4xl text-white font-bold">Projects</h1>
-      <div className="py-12 px-8 flex flex-wrap gap-5">
-        <ProjectCard
-          title="Weather App"
-          main="Crafted as a sleek, responsive web application, this Weather App allows users to effortlessly search for and view real-time weather data for any city. Built with familiar technologies like HTML, JavaScript, and Tailwind CSS, the app seamlessly fetches current temperature, humidity, wind speed, and descriptive weather details from a reliable weather API"
-          image={WeatherImg}
-          sourceUrl="https://github.com/Anurag781/Weather_App/tree/main"
-        />
-        <ProjectCard
-          title="Expense Tracker"
-          main="A sleek, responsive web application that empowers users to effectively record, categorize, and analyze their financial transactions. Built using semantic HTML, stylish CSS, and interactive JavaScript, your Expenses Tracker offers a clean interface for managing daily expenses and incomes with ease."
-          image={ExpenseImg}
-          sourceUrl="https://github.com/Anurag781/Expense_Tracker"
-        />
-        <ProjectCard
-          title="E-Commerce Cart Page"
-          main="A modern, user-centric web component crafted using HTML,CSS, and JavaScript. This e-commerce cart page delivers a smooth and intuitive shopping experience—letting users review items, adjust quantities, apply discounts, and seamlessly proceed to checkout."
-          image={EcommerceImg}
-          sourceUrl="https://github.com/Anurag781/Ecommerce_Cart_Page"
-        />
+    <section
+      id="Projects"
+      className="relative bg-[#0a0a0a] text-white p-10 md:p-24 overflow-hidden"
+    >
+      {/* Subtle Background Glow */}
+      <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/5 blur-[100px] rounded-full"></div>
+
+      <div className="max-w-6xl mx-auto z-10 relative">
+        <h2 className="text-3xl md:text-5xl font-light mb-12 tracking-tight">
+          Featured <span className="text-blue-500 font-normal">Projects.</span>
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          {projectList.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              main={project.main}
+              image={project.image}
+              sourceUrl={project.sourceUrl}
+              tech={project.tech}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
