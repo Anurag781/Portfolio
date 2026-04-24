@@ -27,7 +27,7 @@
   
 ## 🚀 Live Demo
 
-🌐 [**anuragthakurportfolio.netlify.app**](https://netlify.app)
+🌐 [**anuragthakurportfolio.netlify.app**](https://anuragthakurportfolio.netlify.app/)
 
 *Explore my work, skills, and professional journey.*
 
